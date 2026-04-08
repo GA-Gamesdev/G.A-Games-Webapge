@@ -1,0 +1,73 @@
+i<!DOCTYPE html>
+<head>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.css" />
+
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.js"></script>
+</head>
+
+<style>
+.firebaseui-idp-google{
+    background-color: rgb(34, 34, 34) !important;
+    border-radius: 10px;
+}
+.firebaseui-idp-google:hover{
+    background-color: rgb(81, 81, 81) !important;
+}
+
+.firebaseui-idp-google .firebaseui-idp-text{
+  color:white
+}
+.firebaseui-idp-password{
+    background-color: rgb(34, 34, 34) !important;
+    border-radius: 10px;
+}
+.firebaseui-idp-password:hover{
+    background-color: rgb(81, 81, 81) !important;
+}
+
+.firebaseui-idp-password .firebaseui-idp-text{
+  color:white
+}
+</style>
+
+
+<body>
+<div class="auth-card" style="text-align: center;">
+    <img src="ga logo2.png" style="width:100px; padding: 100px;"></img>
+</div>
+<div id="firebaseui-auth-container"></div>
+    </div>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBOUjPwr7CP_xPtynbT9H1huLyHH9Y0QgU",
+  authDomain: "gaauth-62916.firebaseapp.com",
+  projectId: "gaauth-62916",
+  storageBucket: "gaauth-62916.firebasestorage.app",
+  messagingSenderId: "719968077503",
+  appId: "1:719968077503:web:3dbcc7100d65e00799a80a",
+  measurementId: "G-LFJRSTEC49"
+};
+ firebase.initializeApp(firebaseConfig)
+
+ let ui = new firebaseui.auth.AuthUI(firebase.auth())
+
+ var uiConfig = {
+        signInSuccessUrl: 'index.html', 
+        signInOptions: [
+                      {
+            provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            requireDisplayName: false
+          },
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+
+        ],
+        tosUrl: '#',
+        privacyPolicyUrl: '#'
+      };
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
+ui.start('#firebaseui-auth-container',uiConfig)
+</script>
+</body>
