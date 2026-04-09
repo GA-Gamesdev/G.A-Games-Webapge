@@ -55,6 +55,7 @@ const firebaseConfig = {
  let ui = new firebaseui.auth.AuthUI(firebase.auth())
 
  var uiConfig = {
+     signInFlow: 'popup',
         signInSuccessUrl: 'index.html', 
         signInOptions: [
                       {
