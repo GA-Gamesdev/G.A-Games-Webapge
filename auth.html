@@ -121,7 +121,7 @@ const firebaseConfig = {
  let ui = new firebaseui.auth.AuthUI(firebase.auth())
 
  var uiConfig = {
-        signInSuccessUrl: 'index.html', 
+        signInSuccessUrl: 'index', 
         signInOptions: [
                       {
             provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
