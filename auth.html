@@ -1,7 +1,8 @@
-i<!DOCTYPE html>
+<!DOCTYPE html>
 <head>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.1.0/firebase-ui-auth.css" />
-
+<title> G.A Games auth</title>
+    <link rel="icon" type="image/png" href="ga logo2.png">
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
 
@@ -12,24 +13,89 @@ i<!DOCTYPE html>
 .firebaseui-idp-google{
     background-color: rgb(34, 34, 34) !important;
     border-radius: 10px;
+        font-family: Fredoka !important;
+              font-weight: 100px;
 }
 .firebaseui-idp-google:hover{
     background-color: rgb(81, 81, 81) !important;
 }
 
 .firebaseui-idp-google .firebaseui-idp-text{
-  color:white
+  color:white;
+      font-family: Fredoka !important;
+            font-weight: 100;
 }
 .firebaseui-idp-password{
     background-color: rgb(34, 34, 34) !important;
     border-radius: 10px;
+        font-family: Fredoka !important;
+              font-weight: 100;
 }
 .firebaseui-idp-password:hover{
     background-color: rgb(81, 81, 81) !important;
 }
 
 .firebaseui-idp-password .firebaseui-idp-text{
-  color:white
+  color:white;
+      font-family: Fredoka !important;
+      font-weight: 100;
+}
+
+
+
+.mdl-progress {
+    display: none !important;
+}
+
+.firebase-id-submit,.firebaseui-id-submit.mdl-button{
+        background-color: rgb(34, 34, 34) !important;
+    border-radius: 10px !important;
+        font-family: Fredoka !important;
+}
+
+.firebase-id-submit:hover,.firebaseui-id-submit.mdl-button:hover{
+        background-color: rgb(81, 81, 81) !important;
+
+        
+
+}
+
+.firebaseui-id-secondary-link{
+    color:white !important;
+    background-color: rgb(34, 34, 34) !important;
+    border-radius: 10px !important;
+        font-family: Fredoka !important;
+    
+}
+
+.firebaseui-container{
+    background-color: rgb(10, 10, 10) !important;
+    padding:20px;
+    border-radius: 20px !important
+}
+
+.firebaseui-title{
+    color:white;
+    font-family: Fredoka !important;
+}
+
+.mdl-textfield--floating-label.is-focused .mdl-textfield__label:after {
+    background-color: transparent !important; /* Change this to your preferred color or 'transparent' */
+    color: white
+}
+
+
+
+.mdl-textfield__input {
+    border-bottom: none !important;
+    border-bottom: 1px solid transparent !important;
+    color:rgb(221, 221, 221)
+}
+
+body{
+    background-color: rgb(48, 48, 48);
+      background-image: linear-gradient(to bottom, #3f4685, #45326a);
+      min-height: 100vh;
 }
 </style>
 
@@ -55,7 +121,6 @@ const firebaseConfig = {
  let ui = new firebaseui.auth.AuthUI(firebase.auth())
 
  var uiConfig = {
-     signInFlow: 'popup',
         signInSuccessUrl: 'index.html', 
         signInOptions: [
                       {
@@ -68,7 +133,7 @@ const firebaseConfig = {
         tosUrl: '#',
         privacyPolicyUrl: '#'
       };
-firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
+
 ui.start('#firebaseui-auth-container',uiConfig)
 </script>
 </body>
